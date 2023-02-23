@@ -1,0 +1,148 @@
+[
+  {
+    "id": "XX-DIONISIO-123",
+    "name": "dionisio-oxford-cuoio",
+    "url": "https://www.datocms-assets.com/88680/1676644046-products.json",
+    "price": 179.0,
+    "image": "https://www.datocms-assets.com/88680/1676643861-dionisio.jpg",
+    "inventoryManagementMethod": "Variant",
+    "dimensions": {
+      "weight": 300,
+      "width": 20,
+      "height": 10,
+      "length": 30
+    },
+    "variants": [
+      {
+        "variation": [
+          {
+            "name": "color",
+            "option": "Blu"
+          },
+          {
+            "name": "color",
+            "option": "Marrone"
+          },
+          {
+            "name": "color",
+            "option": "Marrone Chiaro"
+          },
+          {
+            "name": "size",
+            "option": "39"
+          },
+          {
+            "name": "size",
+            "option": "40"
+          },
+          {
+            "name": "size",
+            "option": "40.5"
+          },
+          {
+            "name": "size",
+            "option": "41"
+          },
+          {
+            "name": "size",
+            "option": "42"
+          },
+          {
+            "name": "size",
+            "option": "43"
+          },
+          {
+            "name": "size",
+            "option": "44"
+          }
+        ],
+        "stock": 100,
+        "allowOutOfStockPurchases": false
+      }
+    ],
+    "categories": ["ALLACCIATO", "UOMO"],
+    "customFields": [
+      {
+        "name": "Size",
+        "options": "39|40|40.5|41|42|43|44",
+        "type": "dropdown"
+      },
+      {
+        "name": "Color",
+        "options": "Blu|Marrone|Marrone Chiaro",
+        "type": "dropdown"
+      }
+    ]
+  },
+  {
+    "id": "XX-ARIO-456",
+    "name": "ario",
+    "url": "https://www.datocms-assets.com/88680/1676644046-products.json",
+    "price": 179.0,
+    "image": "https://www.datocms-assets.com/88680/1676643865-ario.jpg",
+    "inventoryManagementMethod": "Variant",
+    "dimensions": {
+      "weight": 300,
+      "width": 20,
+      "height": 10,
+      "length": 30
+    },
+    "variants": [
+      {
+        "variation": [
+          {
+            "name": "color",
+            "option": "Testa di Moro"
+          },
+          {
+            "name": "color",
+            "option": "Marrone Chiaro"
+          },
+          {
+            "name": "size",
+            "option": "39"
+          },
+          {
+            "name": "size",
+            "option": "40"
+          },
+          {
+            "name": "size",
+            "option": "41"
+          },
+          {
+            "name": "size",
+            "option": "42"
+          },
+          {
+            "name": "size",
+            "option": "43"
+          },
+          {
+            "name": "size",
+            "option": "44"
+          },
+          {
+            "name": "size",
+            "option": "45"
+          }
+        ],
+        "stock": 100,
+        "allowOutOfStockPurchases": false
+      }
+    ],
+    "categories": ["ALLACCIATO", "UOMO"],
+    "customFields": [
+      {
+        "name": "Size",
+        "options": "39|40|41|42|43|44|45",
+        "type": "dropdown"
+      },
+      {
+        "name": "Color",
+        "options": "Testa di Moro|Marrone Chiaro",
+        "type": "dropdown"
+      }
+    ]
+  }
+]

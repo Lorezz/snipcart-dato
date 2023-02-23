@@ -1,91 +1,55 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <>
+      <main>
+        <section>
+          <h2>Examples</h2>
+          <div>
+            <h3>DIONISIO</h3>
+            <div>{'179€'}</div>
+            <button
+              className="snipcart-add-item"
+              data-item-id="XX-DIONISIO-123"
+              data-item-price="179.00"
+              data-item-url="./"
+              data-item-description="ALLACCIATO UOMO DIONISIO"
+              data-item-image="https://www.datocms-assets.com/88680/1676643861-dionisio.jpg"
+              data-item-name="dionisio-oxford-cuoio"
+              data-item-custom1-name="Color"
+              data-item-custom1-options="Blu|Marrone|Marrone Chiaro"
+              data-item-custom2-name="Size"
+              data-item-custom2-options="39|40|40.5|41|42|43|44"
+            >
+              Add to cart
+            </button>
+          </div>
+          <div>
+            <h3>ARIO</h3>
+            <div>{'179€'}</div>
+            <button
+              className="snipcart-add-item"
+              data-item-id="XX-ARIO-456"
+              data-item-price="179.00"
+              data-item-url="./"
+              data-item-description="ALLACCIATO UOMO ARIO"
+              data-item-image="https://www.datocms-assets.com/88680/1676643865-ario.jpg"
+              data-item-name="Ario"
+              data-item-custom1-name="Color"
+              data-item-custom1-options="Testa di Moro|Marrone Chiaro"
+              data-item-custom2-name="Size"
+              data-item-custom2-options="39|40|41|42|43|44|45"
+            >
+              Add to cart
+            </button>
+          </div>
+        </section>
+        <div
+          hidden
+          id="snipcart"
+          data-api-key={process.env.NEXT_PUBLIC_SNIPCART_API_KEY}
+          data-config-modal-style="side"
         />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      </main>
+    </>
+  );
 }
