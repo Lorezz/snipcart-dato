@@ -1,4 +1,14 @@
+import ProductList from "../components/productList";
+
 export default function Home() {
+  return (
+    <div>
+      <ProductList />
+    </div>
+  );
+}
+
+function old() {
   return (
     <>
       <main>
@@ -6,7 +16,7 @@ export default function Home() {
           <h2>Examples</h2>
           <div>
             <h3>DIONISIO</h3>
-            <div>{'179€'}</div>
+            <div>{"179€"}</div>
             <button
               className="snipcart-add-item"
               data-item-id="XX-DIONISIO-123"
@@ -25,7 +35,7 @@ export default function Home() {
           </div>
           <div>
             <h3>ARIO</h3>
-            <div>{'179€'}</div>
+            <div>{"179€"}</div>
             <button
               className="snipcart-add-item"
               data-item-id="XX-ARIO-456"
