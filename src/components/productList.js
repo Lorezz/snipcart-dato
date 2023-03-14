@@ -1,6 +1,5 @@
 import ProductCard from "./productCard";
 import { getProducts } from "@/lib/fetchApi";
-
 export default async function Example() {
   const products = await getProducts();
   return (

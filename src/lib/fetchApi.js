@@ -59,7 +59,7 @@ export const getProducts = async () => {
   const { allProducts } = response;
   const list = allProducts.reduce((all, product) => {
     const items = product.variants.map((v) => {
-      const { image, color, sku, id } = v;
+      const { image, color, sku, id, sizes } = v;
       const { price, name, description } = product;
       return {
         id,
@@ -71,6 +71,13 @@ export const getProducts = async () => {
         url: `${HOST}/api/products/${id}`,
         price: parseFloat(price),
         parent: product.id,
+        variants: sizes.map((s) => {
+          return {
+            variation: { name: "size", option: s.name },
+            stock: 0,
+            allowOutOfStockPurchases: false,
+          };
+        }),
       };
     });
     return [...all, ...items];
