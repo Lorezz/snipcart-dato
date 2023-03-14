@@ -23,18 +23,16 @@ export default function ProductCard({ product }) {
         className="snipcart-add-item  my-4 bg-black   text-white font-bold py-2 px-4 rounded"
         data-item-id={product.id}
         data-item-name={product.name}
+        data-item-currency="EUR"
         data-item-price={parseFloat(product.price)}
-        data-item-url={"/api/products/" + product.id}
+        data-item-url={product.url}
         data-item-description={product.description}
         data-item-image={product.image.url}
-        data-item-custom1-name="Size"
-        data-item-custom1-required="true"
-        data-item-custom1-value="40"
-        data-cart-custom1-options={products.sizes
-          .map((s) => {
-            s.name;
-          })
+        data-cart-custom1-options={product.sizes
+          .map((size) => size.name)
           .join("|")}
+        data-item-custom1-name="size"
+        // data-item-custom1-required="true"
       >
         Add to cart
       </button>

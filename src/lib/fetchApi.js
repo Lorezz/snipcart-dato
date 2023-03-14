@@ -70,6 +70,14 @@ export const getProducts = async () => {
         image: image.url,
         url: `${HOST}/api/products/${id}`,
         price: parseFloat(price),
+        sizes,
+        customFields: [
+          {
+            name: "Size",
+            options: sizes.map((s) => s.name).join("|"),
+            type: "dropdown",
+          },
+        ],
         variants: sizes.map((s) => {
           return {
             variation: { name: "size", option: s.name },
