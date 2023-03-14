@@ -80,7 +80,7 @@ export const getProducts = async () => {
         ],
         variants: sizes.map((s) => {
           return {
-            variation: { name: "size", option: s.name },
+            variation: { name: "Size", option: s.name },
           };
         }),
       };
