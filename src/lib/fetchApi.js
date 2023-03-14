@@ -69,8 +69,8 @@ export const getProducts = async () => {
         sku,
         image: image.url,
         url: `${HOST}/api/products/${id}`,
-        price: parseFloat(price),
-        sizes,
+        price: "" + parseFloat(price),
+        // sizes,
         customFields: [
           {
             name: "Size",
