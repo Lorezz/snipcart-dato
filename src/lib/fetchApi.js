@@ -74,8 +74,8 @@ export const getProducts = async () => {
         variants: sizes.map((s) => {
           return {
             variation: { name: "size", option: s.name },
-            stock: 0,
-            allowOutOfStockPurchases: false,
+            stock: 10,
+            allowOutOfStockPurchases: "true",
           };
         }),
       };
