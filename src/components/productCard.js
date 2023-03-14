@@ -27,6 +27,14 @@ export default function ProductCard({ product }) {
         data-item-url={"/api/products/" + product.id}
         data-item-description={product.description}
         data-item-image={product.image.url}
+        data-item-custom1-name="Size"
+        data-item-custom1-required="true"
+        data-item-custom1-value="40"
+        data-cart-custom1-options={products.sizes
+          .map((s) => {
+            s.name;
+          })
+          .join("|")}
       >
         Add to cart
       </button>

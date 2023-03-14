@@ -70,12 +70,9 @@ export const getProducts = async () => {
         image: image.url,
         url: `${HOST}/api/products/${id}`,
         price: parseFloat(price),
-        parent: product.id,
         variants: sizes.map((s) => {
           return {
             variation: { name: "size", option: s.name },
-            stock: 10,
-            allowOutOfStockPurchases: "true",
           };
         }),
       };
