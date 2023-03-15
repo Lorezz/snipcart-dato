@@ -31,8 +31,12 @@ export default function RootLayout({ children }) {
           data-config-modal-style="side"
         />
       </body>
-      <Script src="https://cdn.snipcart.com/themes/v3.4.1/default/snipcart.js" />
       <Script
+        id="snipcart-script"
+        src="https://cdn.snipcart.com/themes/v3.4.1/default/snipcart.js"
+      />
+      <Script
+        id="snipcart-config"
         dangerouslySetInnerHTML={{
           __html: `window.SnipcartSettings = {
           publicApiKey: "${process.env.NEXT_PUBLIC_SNIPCART_API_KEY}",
