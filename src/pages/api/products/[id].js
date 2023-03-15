@@ -1,9 +1,22 @@
+import Cors from "cors";
+import initMiddleware from "@/lib/init-middleware";
 import { getProducts } from "@/lib/fetchApi";
 
-const HOST = process.env.NEXT_PUBLIC_HOST;
+const cors = initMiddleware(
+  Cors({
+    // Only allow requests with GET, POST and OPTIONS
+    methods: ["GET", "POST", "OPTIONS"],
+  })
+);
+
 export default async function handler(req, res) {
+  await cors(req, res);
   const { id } = req.query;
+
   console.log("productId", id);
+  if (req.method === "POST") {
+    console.log("body=", req.body);
+  }
   const products = await getProducts();
   /*
 id: string
