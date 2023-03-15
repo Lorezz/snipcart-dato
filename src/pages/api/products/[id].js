@@ -29,6 +29,7 @@ id: string
 
   const product = products.find((p) => p.id === id);
   console.log("product", product);
+  const { name, price, url, description, image } = product;
 
-  res.status(200).json(product);
+  res.status(200).json({ id, name, price, url, description, image });
 }

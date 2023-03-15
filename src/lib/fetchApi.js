@@ -74,7 +74,7 @@ export const getProducts = async () => {
         sku,
         image: image.url,
         url: `${HOST}/api/products/${id}`,
-        price: "" + parseFloat(price),
+        price: parseFloat(price),
         inventoryManagementMethod: "Variant",
         // sizes,
         customFields: [
