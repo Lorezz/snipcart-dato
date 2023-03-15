@@ -52,6 +52,12 @@ export const getProducts = async () => {
         url
       }
     }
+    settings {
+      id
+      options
+      title
+    }
+    customizable
   }
 }
 `;
@@ -60,7 +66,7 @@ export const getProducts = async () => {
   const list = allProducts.reduce((all, product) => {
     const items = product.variants.map((v) => {
       const { image, color, sku, id, sizes } = v;
-      const { price, name, description } = product;
+      const { price, name, description, customizable, settings } = product;
 
       const variants = sizes.map((s) => {
         return {
@@ -90,6 +96,8 @@ export const getProducts = async () => {
           },
         ],
         variants,
+        customizable,
+        settings,
       };
     });
     return [...all, ...items];

@@ -1,4 +1,9 @@
+"use client";
+import { useState } from "react";
+import Modal from "./modal";
+
 export default function ProductCard({ product }) {
+  const [open, setOpen] = useState(false);
   return (
     <div>
       <div key={product.id} className="group relative">
@@ -34,6 +39,69 @@ export default function ProductCard({ product }) {
       >
         Add to cart
       </button>
+
+      {product.customizable && (
+        <button
+          onClick={() => setOpen(true)}
+          className=" my-4 bg-white   text-black font-bold py-2 px-4 rounded"
+        >
+          Personalizza
+        </button>
+      )}
+
+      {
+        <Modal open={open} setOpen={() => setOpen(!open)}>
+          {product.settings.map((voice, index) => {
+            return (
+              <div
+                key={product.id + "" + index}
+                className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5"
+              >
+                <label
+                  htmlFor="first-name"
+                  className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5"
+                >
+                  {voice.title}
+                </label>
+                <div className="mt-2 sm:col-span-2 sm:mt-0">
+                  <select
+                    type="text"
+                    name="first-name"
+                    id="first-name"
+                    autoComplete="given-name"
+                    className="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  >
+                    {voice.options.split("|").map((option, index) => {
+                      return (
+                        <option key={index} value={option}>
+                          {option}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
+            );
+          })}
+          <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+            <label
+              htmlFor="first-name"
+              className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5"
+            >
+              Note
+            </label>
+            <div className="mt-2 sm:col-span-2 sm:mt-0">
+              <textarea
+                type="text"
+                name="first-name"
+                id="first-name"
+                autoComplete="given-name"
+                className="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+        </Modal>
+      }
     </div>
   );
 }
