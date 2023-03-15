@@ -317,21 +317,7 @@ export default function Example() {
                 Get free delivery on orders over $100
               </p>
 
-              <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                <a
-                  href="#"
-                  className="text-sm font-medium text-white hover:text-gray-100"
-                >
-                  Create an account
-                </a>
-                <span className="h-6 w-px bg-gray-600" aria-hidden="true" />
-                <a
-                  href="#"
-                  className="text-sm font-medium text-white hover:text-gray-100"
-                >
-                  Sign in
-                </a>
-              </div>
+              <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"></div>
             </div>
           </div>
 
@@ -354,7 +340,7 @@ export default function Example() {
 
                   <div className="hidden h-full lg:flex">
                     {/* Mega menus */}
-                    <Popover.Group className="ml-8 z-40">
+                    <Popover.Group className="ml-8 z-10">
                       <div className="flex h-full justify-center space-x-8">
                         {navigation.categories.map((category, categoryIdx) => (
                           <Popover key={category.name} className="flex">

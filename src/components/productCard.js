@@ -23,7 +23,7 @@ export default function ProductCard({ product }) {
         className="snipcart-add-item  my-4 bg-black   text-white font-bold py-2 px-4 rounded"
         data-item-id={product.id}
         data-item-name={product.name}
-        data-item-currency="EUR"
+        data-item-currency={product.currency}
         data-item-price={parseFloat(product.price)}
         data-item-url={product.url}
         data-item-description={product.description}

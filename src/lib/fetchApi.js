@@ -62,16 +62,21 @@ export const getProducts = async () => {
       const { image, color, sku, id, sizes } = v;
       const { price, name, description } = product;
 
-      const variation = sizes.map((s) => {
-        return { name: "Size", option: s.name };
+      const variants = sizes.map((s) => {
+        return {
+          variation: [{ name: "Size", option: s.name }],
+          allowOutOfStockPurchases: false,
+        };
       });
 
       return {
         id,
-        name,
+        model: name,
+        name: `${name} - ${color}`,
         description,
         color,
         sku,
+        currency: "EUR",
         image: image.url,
         url: `${HOST}/api/products/${id}`,
         price: parseFloat(price),
@@ -84,13 +89,7 @@ export const getProducts = async () => {
             type: "dropdown",
           },
         ],
-        variants: [
-          {
-            variation,
-            stock: 1,
-            allowOutOfStockPurchases: false,
-          },
-        ],
+        variants,
       };
     });
     return [...all, ...items];
